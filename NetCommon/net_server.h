@@ -70,7 +70,7 @@ namespace olc
 							std::cout << "[SERVER] New Connection Error: " << ec.message() << '\n';
 
 							std::shared_ptr<connection<T>> newconn =
-								std::makre_shared<connection<T>>(connection<T>::owner::server,
+								std::make_shared<connection<T>>(connection<T>::owner::server,
 									m_asioContext, std::move(socket), m_qMessagesIn);
 
 							// Give the user server a chance to deny connection
@@ -158,7 +158,7 @@ namespace olc
 
 		protected:
 			// Called when a client connects, you can veto the connection by returning false
-			virtual bool OnClientConnect(std::shared_ptr << T >> client)
+			virtual bool OnClientConnect(std::shared_ptr<connection<T>> client)
 			{
 				return false;
 			}

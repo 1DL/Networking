@@ -67,7 +67,7 @@ namespace olc
 			T pop_front()
 			{
 				std::scoped_lock lock(muxQueue);
-				auto T = std::move(deqQueue.front());
+				auto t = std::move(deqQueue.front());
 				deqQueue.pop_front();
 				return t;
 			}
@@ -76,7 +76,7 @@ namespace olc
 			T pop_back()
 			{
 				std::scoped_lock lock(muxQueue);
-				auto T = std::move(deqQueue.back());
+				auto t = std::move(deqQueue.back());
 				deqQueue.pop_back();
 				return t;
 			}
